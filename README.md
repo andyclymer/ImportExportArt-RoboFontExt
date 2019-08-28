@@ -4,6 +4,8 @@ by Andy Clymer
 
 This extension will export a SVG image of a selection of glyphs for filtering and processing outside of RoboFont, and then can import the glyphs out of the SVG file back into the same position they came from in the UFO, leaving their kerning and spacing intact.
 
+It requires that you’ve already installed DrawBot, which can be found as an extension in Mechanic 2 or can be downloaded here: https://github.com/typemytype/drawBotRoboFontExtension
+
 ### Exporting:
 
 Choose a font and a range of glyphs to export.
