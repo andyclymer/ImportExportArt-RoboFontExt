@@ -6,7 +6,7 @@ This extension will export a SVG image of a selection of glyphs for filtering an
 
 It requires that you’ve already installed DrawBot, which can be found as an extension in Mechanic 2 or can be downloaded here: https://github.com/typemytype/drawBotRoboFontExtension
 
-### Exporting:
+### Exporting
 
 Choose a font and a range of glyphs to export.
 
