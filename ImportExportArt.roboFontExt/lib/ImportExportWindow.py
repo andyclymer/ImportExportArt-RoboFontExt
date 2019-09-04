@@ -129,7 +129,7 @@ class ImportExportArtWindow:
             # Import
             self.w.importBox = vanilla.Box((10, 485, -10, 285))
             self.w.importBox.title = vanilla.TextBox((10, 10, -10, 190), descriptionImport)
-            self.w.importBox.layerChoice = vanilla.PopUpButton((10, 210, -10, 25), ["Into the “foreground“ layer", "Into a new layer called “import“"])
+            self.w.importBox.layerChoice = vanilla.PopUpButton((10, 210, -10, 25), ["Into the default foreground layer", "Into a new layer called “import“"])
             self.w.importBox.importButton = vanilla.SquareButton((10, 240, -10, 25), "Import SVG", callback=self.importCallback)
         
             self.w.bind("close", self.closeCallback)
@@ -353,13 +353,14 @@ class ImportExportArtWindow:
                 if not gn in f.keys():
                     f.newGlyph(gn)
                 g = f[gn]
-                if layerChoice == [0]:
+                if layerChoice == 0:
+                    gf = g.getLayer(f.defaultLayerName)
                     # Import into the foregronud
-                    gl = g.getLayer("backup")
+                    gl = gf.getLayer("backup")
                     gl.appendGlyph(g)
-                    gl.width = g.width
-                    g.clear()
-                    destGlyph = g
+                    gl.width = gf.width
+                    gf.clear()
+                    destGlyph = gf
                 else:
                     # Import into the "import" layer
                     gl = g.getLayer("import")
